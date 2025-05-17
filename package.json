@@ -1,0 +1,32 @@
+{
+  "name": "vogot",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "concurrently \"node app.js\" \"stripe listen --forward-to localhost:3000/api/stripe/webhook\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.5",
+    "@supabase/supabase-js": "^2.49.4",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^7.0.2",
+    "stripe": "^18.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+  
+}
+
+

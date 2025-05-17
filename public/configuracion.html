@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Configuración</title>
+  <link rel="stylesheet" href="configuracion.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Configuración de Usuario</h2>
+
+    <div id="user-data" class="section">
+      <!-- Nombre -->
+      <p>
+        <strong>Nombre:</strong>
+        <span id="nombre"></span>
+        <span class="edit-icon" title="Editar" data-campo="nombre">✏️</span>
+        <input type="text" id="input-nombre" class="hidden" />
+        <button id="guardar-nombre" class="hidden">Guardar</button>
+      </p>
+
+      <!-- Apellido -->
+      <p>
+        <strong>Apellido:</strong>
+        <span id="apellido"></span>
+        <span class="edit-icon" title="Editar" data-campo="apellido">✏️</span>
+        <input type="text" id="input-apellido" class="hidden" />
+        <button id="guardar-apellido" class="hidden">Guardar</button>
+      </p>
+
+      <!-- Edad -->
+      <p>
+        <strong>Edad:</strong>
+        <span id="edad"></span>
+        <span class="edit-icon" title="Editar" data-campo="edad">✏️</span>
+        <input type="text" id="input-edad" class="hidden" />
+        <button id="guardar-edad" class="hidden">Guardar</button>
+      </p>
+
+      <!-- Teléfono -->
+      <p>
+        <strong>Teléfono:</strong>
+        <span id="telefono"></span>
+        <span class="edit-icon" title="Editar" data-campo="telefono">✏️</span>
+        <input type="text" id="input-telefono" class="hidden" />
+        <button id="guardar-telefono" class="hidden">Guardar</button>
+      </p>
+
+      <!-- Correo -->
+      <p>
+        <strong>Correo:</strong>
+        <span id="correo"></span>
+        <span class="edit-icon" title="Editar" data-campo="correo">✏️</span>
+        <input type="text" id="input-correo" class="hidden" />
+        <button id="guardar-correo" class="hidden">Guardar</button>
+      </p>
+
+      <!-- Contraseña -->
+      <p>
+        <strong>Contraseña:</strong>
+        <button id="change-password-btn">Cambiar contraseña</button>
+      </p>
+    </div>
+
+    <!-- Modal de cambio de contraseña -->
+    <div id="change-password-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close" id="close-change-modal" aria-label="Cerrar modal">&times;</span>
+        <h3>Comprobar Datos</h3>
+
+        <!-- Paso 1: Contraseña actual para autenticar -->
+        <div id="step-current-password" class="section">
+          <input type="password" id="current-password" placeholder="Contraseña actual" />
+          <button id="authenticate-password">Autenticar</button>
+        </div>
+
+        <!-- Paso 2: Nueva contraseña -->
+        <div id="step-new-password" class="section hidden">
+          <input type="password" id="new-password-auth" placeholder="Nueva contraseña" />
+          <button id="submit-change-password">Guardar</button>
+        </div>
+
+        <p id="change-password-message"></p>
+
+        <!-- Enlace para olvidar contraseña -->
+        <p><a href="#" id="forgot-password-link">¿Olvidaste tu contraseña?</a></p>
+
+        <!-- Sección para recuperación -->
+        <div id="step-forgot-password" class="section hidden">
+          <p>Ingresa tu correo para restablecer la contraseña:</p>
+          <input type="email" id="forgot-email" placeholder="Correo electrónico" />
+          <button id="submit-forgot-password">Enviar</button>
+        </div>
+
+        <!-- Paso 3: Ingresar código de verificación -->
+        <div id="step-code-verification" class="section hidden">
+          <p>Revisa tu correo e ingresa el código de recuperación:</p>
+          <input type="text" id="recovery-code" placeholder="Código de 6 dígitos" />
+          <button id="verify-code-btn">Verificar código</button>
+          <p id="code-error-message" style="color: red;"></p>
+        </div>
+
+        <!-- Paso final (ingresar nueva contraseña tras recuperación) -->
+        <div id="step-new-password-reset" class="section hidden">
+          <input type="password" id="new-password-reset" placeholder="Nueva contraseña" />
+          <button id="submit-reset-password">Guardar nueva contraseña</button>
+          <p id="reset-password-message"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="configuracion.js"></script>
+</body>
+</html>

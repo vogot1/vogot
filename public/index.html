@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VOGOT - Bebe con estilo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <nav class="nav-container">
+      <!-- Izquierda -->
+      <div class="nav-section">
+        <a href="#">INICIO</a>
+        <a href="#cursos">CURSOS</a>
+      </div>
+  
+      <!-- Centro -->
+      <div class="logo-section">
+        <img src="assets/logo.png" alt="VOGOT Logo" class="logo-img" />
+      </div>
+  
+      <!-- Derecha -->
+      <div class="nav-section right">
+        <a href="#acerca">ACERCA DE</a>
+        <a href="#contacto">CONTACTO</a>
+      </div>
+  
+      <!-- Ícono de usuario y menú -->
+      <div class="user-container" id="user-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User Icon" class="user-icon" id="user-icon"/>
+
+        <!-- Menú desplegable (solo visible si logueado) -->
+        <div id="user-menu" class="user-menu" style="display: none;">
+          <span id="user-name">Hola, Usuario</span>
+          <button id="config-btn">Configuración</button>
+          <button id="logout-btn">Cerrar sesión</button>
+        </div>
+      </div>
+
+
+
+    </nav>
+  </header>
+  
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Elegante y Profesional</h1>
+        <p>Bebe con estilo</p>
+        <button onclick="verMas()">VER MÁS</button>
+    </div>
+</section>
+
+<section class="curso1" id="cursos" data-aos="fade-up" data-aos-duration="1000">
+    <div class="curso1-content"  data-aos="fade-up" data-aos-duration="1000">
+        <h1>Introducción al mundo del vino</h1>
+        <p>Aprende los conceptos básicos: tipos de vino, cómo se produce y cómo degustarlo correctamente.</p>
+        <p><strong>Duración:</strong> 4 semanas</p>
+        <button id="comprar-curso1" class="btn-comprar" data-id="curso1">COMPRAR CURSO</button>
+        <button id="ver-curso1" style="display:none">VER CURSO</button>
+    </div>
+    
+</section>
+
+<section class="curso2" id="cursos" data-aos="fade-up" data-aos-duration="1000">
+    <div class="curso2-content"  data-aos="fade-up" data-aos-duration="1000">
+        <h1>Maridaje de Vinos y Comidas</h1>
+        <p>Descubre cómo combinar vinos con diferentes tipos de platos para realzar sabores.</p>
+        <p><strong>Duración:</strong> 2 semanas</p>
+        <button id="comprar-curso2" class="btn-comprar" data-id="curso2">COMPRAR CURSO</button>
+        <button id="ver-curso2" style="display:none">VER CURSO</button>
+
+    </div>
+</section>
+
+<section class="curso3" id="cursos" data-aos="fade-up" data-aos-duration="1000">
+    <div class="curso3-content"  data-aos="fade-up" data-aos-duration="1000">
+        <h1>Curso de Cata de Vinos Profesional</h1>
+        <p>Técnicas avanzadas de cata, análisis sensorial y vocabulario enológico.</p>
+        <p><strong>Duración:</strong> 6 semanas</p>
+        <button id="comprar-curso3" class="btn-comprar" data-id="curso3">COMPRAR CURSO</button>
+        <button id="ver-curso3" style="display:none">VER CURSO</button>
+
+    </div>
+</section>
+
+<section class="curso4" id="cursos" data-aos="fade-up" data-aos-duration="1000">
+    <div class="curso4-content"  data-aos="fade-up" data-aos-duration="1000">
+        <h1>Introducción al Mundo del Tabaco</h1>
+        <p>Aprende sobre la historia, tipos de tabaco y rituales del fumador.</p>
+        <p><strong>Duración:</strong> 3 semanas</p>
+        <button id="comprar-curso4" class="btn-comprar" data-id="curso4">COMPRAR CURSO</button>
+        <button id="ver-curso4" style="display:none">VER CURSO</button>
+
+    </div>
+</section>
+
+<section class="curso5" id="cursos" data-aos="fade-up" data-aos-duration="1000">
+    <div class="curso5-content"  data-aos="fade-up" data-aos-duration="1000">
+        <h1>Cata de Puros para Principiantes</h1>
+        <p>Técnicas para encender, saborear y apreciar un puro correctamente.</p>
+        <p><strong>Duración:</strong> 3 semanas</p>
+        <button id="comprar-curso5" class="btn-comprar" data-id="curso5">COMPRAR CURSO</button>
+        <button id="ver-curso5" style="display:none">VER CURSO</button>
+
+    </div>
+</section>
+
+<section class="espera" id="cursos" data-aos="fade-up" data-aos-duration="1000">
+    <div class="espera-content"  data-aos="fade-up" data-aos-duration="1000">
+        <h1>PRÓXIMOS CURSOS MAS ADELANTE</h1>
+    </div>
+</section>
+
+<section id="acerca" class="acerca">
+    <div class="acerca-container">
+      <div class="acerca-header">
+        <img src="assets/logo.png" alt="Logo VOGOT" class="acerca-logo" />
+        <h2>HOLA Y BIENVENIDO</h2>
+        <hr />
+      </div>
+  
+      <div class="acerca-cuerpo">
+        <div class="acerca-bloque">
+          <h3>MISIÓN</h3>
+          <p>
+            Somos una empresa dedicada a la promoción de la enocultura, bebidas espirituosas y cultura del tabaco, a través del diseño de experiencias gastronómicas y educativas que permitan el aprecio y responsabilidad en su consumo.
+          </p>
+        </div>
+  
+        <div class="acerca-bloque">
+          <h3>VISIÓN</h3>
+          <p>
+            Ser una empresa líder de habla hispana en la difusión de la enocultura, bebidas espirituosas y cultura del tabaco, caracterizada por ofrecer experiencias enriquecedoras y que promuevan el consumo moderado y responsable.
+          </p>
+        </div>
+      </div>
+  
+      <div class="acerca-valores">
+        <h3>VALORES</h3>
+        <ul>
+          <li><strong>Responsabilidad:</strong> promoción del consumo moderado y responsable.</li>
+          <li><strong>Empatía:</strong> comprender siempre a nuestros semejantes.</li>
+          <li><strong>Libertad:</strong> por aprender, experimentar y estimular nuestros sentidos.</li>
+          <li><strong>Amistad:</strong> generar ambientes amistosos.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="contacto" class="contacto">
+    <div class="contacto-contenedor">
+      <h2>CONTACTOS</h2>
+      <p><strong>Teléfonos:</strong><br>91-1234-567 & +34-91-1234-567</p>
+      <p><strong>Email:</strong><br><em>hola@unsitiogenial.es</em></p>
+    </div>
+  
+    <div class="redes-sociales">
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+        <img src="assets/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+        <img src="assets/instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://wa.me/34123456789" target="_blank" aria-label="WhatsApp">
+        <img src="assets/whatsapp.png" alt="WhatsApp" />
+      </a>
+    </div>
+  </section>
+<!-- Botón flotante -->
+<div id="chat-toggle" class="chat-toggle">💬</div>
+
+<!-- Caja de chat -->
+<div id="chat-box" class="chat-box hidden">
+  <div class="chat-header">VitisFume</div>
+  <div id="chat-messages" class="chat-messages"></div>
+  <form id="chat-form" class="chat-form">
+    <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." required />
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+
+  <footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 VOGOT - Todos los derechos reservados.</p>
+    <p>
+      <a href="#" id="footer-terms">Términos y condiciones</a> |
+      <a href="#" id="footer-privacy">Aviso de privacidad</a>
+    </p>
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+  once: false, // Permite que se repita la animación
+});
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+/* Fuente y fondo general */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  padding: 40px 20px;
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+/* Títulos centrados con peso y color suave */
+h1, h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulario principal centrado con padding y sombra */
+form {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto 30px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Inputs con bordes redondeados y enfoque destacado */
+input {
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+/* Botón moderno con transición */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* Estilos para enlaces */
+a, #forgot-password-link {
+  color: #007bff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Mensaje de éxito o sistema */
+#mensaje {
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+  color: #28a745;
+}
+
+/* Modal - fondo oscuro y contenido centrado */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.modal.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease;
+}
+
+/* Contenido del modal con diseño moderno */
+.modal-content {
+  background-color: #fff;
+  margin: 120px auto;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de cerrar modal */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* Inputs dentro del modal */
+.modal-content input {
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Botones en modal */
+.modal-content button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Pasos individuales */
+#step-current-password, 
+#step-new-password, 
+#step-forgot-password, 
+#step-code-verification {
+  margin-bottom: 15px;
+}
+
+/* Texto dentro del modal */
+.modal-content p {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Elementos ocultos */
+.hidden {
+  display: none;
+}
+
+/* Separación visual para secciones internas */
+.section {
+  margin-bottom: 25px;
+}
+
+/* Icono de edición (lápiz) */
+.edit-icon {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  vertical-align: middle;
+  color: #888;
+}
+
+.edit-icon:hover {
+  color: #007bff;
+  transform: scale(1.2);
+}

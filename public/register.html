@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registrarse</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+  <div class="auth-container">
+    <h2>Crear Cuenta</h2>
+    <form action="/register" method="POST" class="auth-form" id="register-form">
+      <label for="register-name">Nombre</label>
+      <input type="text" id="register-name" name="name" required>
+
+      <label for="register-lastname">Apellido</label>
+      <input type="text" id="register-lastname" name="lastname" required>
+
+      <label for="register-age">Edad</label>
+      <input type="number" id="register-age" name="age" required>
+
+      <label for="register-email">Correo electrónico</label>
+      <input type="email" id="register-email" name="email" required>
+
+      <label for="register-phone">Teléfono</label>
+      <input type="tel" id="register-phone" name="phone" required>
+
+      <label for="register-password">Contraseña</label>
+      <input type="password" id="register-password" name="password" required>
+
+      <label for="register-confirm-password">Confirmar contraseña</label>
+      <input type="password" id="register-confirm-password" name="confirm_password" required>
+      <div class="terms-checkbox">
+      <input type="checkbox" id="accept-terms" name="accept_terms" required>
+      <label for="accept-terms">
+        Acepto los <a href="#" id="show-terms">términos y condiciones</a> y el <a href="#" id="show-privacy">aviso de privacidad</a>
+      </label>
+    </div>
+      <button type="submit" class="btn-primary">Registrarse</button>
+    </form>
+    <p class="switch-link">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+  </div>
+
+  <script src="register.js"></script>
+  <!-- Agrega SweetAlert2 en tu HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,928 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: 'Georgia', serif;
+    height: 100%;
+    width: 100%;
+    
+    
+  }
+  /* Estructura del navbar */
+  .navbar {
+    background-color: #9d052c;
+    color: white;
+    height: 100px; 
+    padding: 0 350px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Alineación horizontal */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+
+  .user-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 999;
+    min-width: 150px;
+  }
+
+  .user-menu span {
+    font-weight: bold;
+  }
+  
+  .user-menu button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .user-menu button:hover {
+    background: #f0f0f0;
+  }
+
+.user-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Secciones laterales */
+.nav-section {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-section a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Logo */
+.logo-img {
+  max-height: 150px; /* Importante: más grande pero dentro del navbar */
+  object-fit: contain;
+}
+
+/* Ajusta si usas .logo-section */
+.logo-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 55px;
+}
+
+/* Icono de usuario */
+.user-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Para mantener separación en responsive */
+.nav-section.right {
+  justify-content: flex-end;
+}
+
+  .user-icon img {
+    width: 25px;
+    height: 25px;
+    
+  }
+  .user-container {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 40px; /* Igual al padding del navbar */
+    
+  }
+  /* Hero */
+  .hero {
+    height: 100vh;
+    background: url('assets/hero.png') center center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+    background-attachment: fixed;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 1;
+  }
+  
+  .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .hero-content button:hover {
+    background-color: #eee;
+  }
+  
+
+  .navbar a {
+    color: rgb(0, 0, 0);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+
+    /* curso 1 */
+    .curso1 {
+      height: 100vh;
+      background: url('assets/Curso1.jpg') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; 
+      padding-left: 60px; 
+      position: relative;
+    }
+    
+    .curso1::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .curso1-content {
+      font-family: 'Poppins', sans-serif; 
+      color: black;
+      max-width: 600px;
+      text-align: left; 
+      padding-left: 60px; 
+    }
+    
+    
+    .curso1-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    .curso1-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+.curso1-content button {
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  z-index: 1;
+}
+
+.curso1-content button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.curso1-content button:hover {
+  color: white;
+}
+
+.curso1-content button:hover::before {
+  left: 0;
+}
+
+    /* curso 2*/
+    .curso2 {
+      height: 100vh;
+      background: url('assets/Curso2.jpg') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; 
+      padding-left: 60px; 
+      position: relative;
+    }
+    
+    .curso2::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .curso2-content {
+      font-family: 'Poppins', sans-serif; /* O la que prefieras */
+      color: black;
+      max-width: 600px;
+      text-align: left; /* Para que quede alineado al borde izquierdo */
+      padding-left: 60px; /* Ajusta según necesites para que coincida con la imagen */
+    }
+    
+    
+    .curso2-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    .curso2-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+.curso2-content button {
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  z-index: 1;
+}
+
+.curso2-content button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.curso2-content button:hover {
+  color: white;
+}
+
+.curso2-content button:hover::before {
+  left: 0;
+}
+    
+    /* curso 3*/
+    .curso3 {
+      height: 100vh;
+      background: url('assets/Curso3.jpg') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; 
+      padding-left: 60px; 
+      position: relative;
+    }
+    
+    .curso3::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .curso3-content {
+      font-family: 'Poppins', sans-serif; /* O la que prefieras */
+      color: black;
+      max-width: 600px;
+      text-align: left; /* Para que quede alineado al borde izquierdo */
+      padding-left: 60px; /* Ajusta según necesites para que coincida con la imagen */
+    }
+    
+    
+    .curso3-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    .curso3-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+.curso3-content button {
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  z-index: 1;
+}
+
+.curso3-content button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.curso3-content button:hover {
+  color: white;
+}
+
+.curso3-content button:hover::before {
+  left: 0;
+}
+
+    /* curso 4*/
+    .curso4 {
+      height: 100vh;
+      background: url('assets/Curso4.png') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* para que el contenido esté a la izquierda */
+      padding-left: 60px; /* Ajusta este valor según cómo esté la imagen */
+      position: relative;
+    }
+    
+    .curso4::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .curso4-content {
+      font-family: 'Poppins', sans-serif; /* O la que prefieras */
+      color: black;
+      max-width: 600px;
+      text-align: left; /* Para que quede alineado al borde izquierdo */
+      padding-left: 60px; /* Ajusta según necesites para que coincida con la imagen */
+    }
+    
+    
+    .curso4-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    .curso4-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+.curso4-content button {
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  z-index: 1;
+}
+
+.curso4-content button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.curso4-content button:hover {
+  color: white;
+}
+
+.curso4-content button:hover::before {
+  left: 0;
+}
+    
+
+    /* curso 5*/
+    .curso5 {
+      height: 100vh;
+      background: url('assets/Curso5.png') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; 
+      padding-left: 60px;
+      position: relative;
+    }
+    
+    .curso5::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .curso5-content {
+      font-family: 'Poppins', sans-serif; 
+      color: black;
+      max-width: 600px;
+      text-align: left; 
+      padding-left: 60px; 
+    }
+    
+    
+    .curso5-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    .curso5-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+.curso5-content button {
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  z-index: 1;
+}
+
+.curso5-content button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.curso5-content button:hover {
+  color: white;
+}
+
+.curso5-content button:hover::before {
+  left: 0;
+}
+    
+    /* espera */
+    .espera {
+      height: 100vh;
+      background: url('assets/espera.png') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* para que el contenido esté a la izquierda */
+      padding-left: 60px; /* Ajusta este valor según cómo esté la imagen */
+      position: relative;
+    }
+    
+    .espera::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .espera-content {
+      font-family: 'Poppins', sans-serif; /* O la que prefieras */
+      color: black;
+      max-width: 600px;
+      text-align: center; /* Para que quede alineado al borde izquierdo */
+      padding-left: 60px; /* Ajusta según necesites para que coincida con la imagen */
+    }
+    
+    
+    .espera-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+
+    .acerca {
+      background-color: #f8f8f8;
+      color: #1a1a1a;
+      padding: 60px 40px;
+      font-family: 'Montserrat', sans-serif;
+      height: 100vh;
+    }
+    
+    .acerca-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .acerca-header {
+      text-align: center;
+    }
+    
+    .acerca-logo {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+    
+    .acerca-header h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .acerca-header hr {
+      height: 3px;
+      background-color: black;
+      border: none;
+      width: 60%;
+      margin: 0 auto 40px auto;
+    }
+    
+    .acerca-cuerpo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .acerca-bloque {
+      flex: 1 1 45%;
+    }
+    
+    .acerca-bloque h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .acerca-bloque p {
+      line-height: 1.6;
+    }
+    
+    .acerca-valores {
+      text-align: center;
+    }
+    
+    .acerca-valores h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .acerca-valores ul {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .acerca-valores li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .contacto {
+      background-color: #10004c;
+      color: #2c1e00;
+      padding: 4rem 1rem;
+      text-align: center;
+      position: relative;
+      
+    }
+    
+    .contacto-contenedor {
+      background-color: #e9e9ec;
+      border-radius: 50% 50% 0 0;
+      width: 60%;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .contacto-contenedor h2 {
+      font-family: 'YourFont', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #2c1e00;
+    }
+    
+    .contacto-contenedor p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      color: #2c1e00;
+      margin: 0.5rem 0;
+    }
+    
+    .redes-sociales {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    
+    .redes-sociales img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+    
+    .redes-sociales img:hover {
+      transform: scale(1.2);
+    }
+    
+    .auth-body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #9e0b0f, #c8232c);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .auth-container {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    
+    .auth-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #9e0b0f;
+    }
+    
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .auth-form label {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    
+    .auth-form input {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    
+    .btn-primary {
+      background-color: #9e0b0f;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: #80070b;
+    }
+    
+    .switch-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+    
+    .switch-link a {
+      color: #9e0b0f;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+#user-info span {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+#logout-btn {
+  background-color: transparent;
+  border: none;
+  color: #f00;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+
+.modal.hidden { display: none; }
+.modal.show { display: block; }
+.modal-content { background: white; padding: 20px; border-radius: 8px; }
+.close { float: right; cursor: pointer; }
+
+.footer {
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #ddd;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #6c63ff;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+.chat-toggle:hover {
+  transform: scale(1.1);
+}
+
+.chat-box {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.chat-header {
+  background-color: #6c63ff;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.chat-messages {
+  padding: 10px;
+  flex: 1;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.chat-form {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-form button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #6c63ff;
+  color: white;
+  cursor: pointer;
+}
