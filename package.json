@@ -1,11 +1,11 @@
 {
   "name": "vogot",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "concurrently \"node app.js\" \"stripe listen --forward-to localhost:3000/api/stripe/webhook\""
+    "start": "index app.js",
+    "dev": "concurrently \"index app.js\" \"stripe listen --forward-to localhost:3000/api/stripe/webhook\""
   },
   "keywords": [],
   "author": "",
