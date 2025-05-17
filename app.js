@@ -490,8 +490,8 @@ app.post('/api/checkout/curso1', authGuard, async (req, res) => {
     metadata: {
       curso_id: 'curso1' // puedes identificar el curso comprado
     },
-    success_url: 'http://localhost:3000',
-    cancel_url: 'http://localhost:3000',
+    success_url: 'https://vogot.onrender.com/index.html',
+    cancel_url: 'https://vogot.onrender.com/index.html',
   });
 
   res.json({ url: session.url });
@@ -512,8 +512,8 @@ app.post('/api/checkout/curso2', authGuard, async (req, res) => {
     metadata: {
       curso_id: 'curso2' // puedes identificar el curso comprado
     },
-    success_url: 'https://tusitio.com/success',
-    cancel_url: 'http://localhost:3000',
+    success_url: 'https://vogot.onrender.com/index.html',
+    cancel_url: 'https://vogot.onrender.com/index.html',
   });
 
   res.json({ url: session.url });
@@ -534,8 +534,8 @@ app.post('/api/checkout/curso3', authGuard, async (req, res) => {
     metadata: {
       curso_id: 'curso3' // puedes identificar el curso comprado
     },
-    success_url: 'http://localhost:3000',
-    cancel_url: 'http://localhost:3000',
+    success_url: 'https://vogot.onrender.com/index.html',
+    cancel_url: 'https://vogot.onrender.com/index.html',
   });
 
   res.json({ url: session.url });
@@ -556,8 +556,8 @@ app.post('/api/checkout/curso4', authGuard, async (req, res) => {
     metadata: {
       curso_id: 'curso4' // puedes identificar el curso comprado
     },
-    success_url: 'http://localhost:3000',
-    cancel_url: 'http://localhost:3000',
+    success_url: 'https://vogot.onrender.com/index.html',
+    cancel_url: 'https://vogot.onrender.com/index.html',
   });
 
   res.json({ url: session.url });
@@ -577,8 +577,8 @@ app.post('/api/checkout/curso5', authGuard, async (req, res) => {
     metadata: {
       curso_id: 'curso5' // puedes identificar el curso comprado
     },
-    success_url: 'http://localhost:3000',
-    cancel_url: 'http://localhost:3000',
+    success_url: 'https://vogot.onrender.com/index.html',
+    cancel_url: 'https://vogot.onrender.com/index.html',
   });
 
   res.json({ url: session.url });
