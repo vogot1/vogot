@@ -26,6 +26,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 
 app.post('/api/stripe/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+   console.log('✅ Webhook recibido');
   let event;
 
   try {
