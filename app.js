@@ -44,6 +44,12 @@ app.post('/api/stripe/webhook', express.raw({ type: 'application/json' }), async
     const session = event.data.object;
     const email = session.customer_email;
     const cursoId = session.metadata.curso_id;
+    console.log('Session completa:', session);
+    
+  if (!email || !cursoId) {
+    console.error('Faltan datos necesarios:', { email, cursoId });
+    return res.sendStatus(400);
+  }
 
     console.log(`💰 Compra completada: ${email} compró ${cursoId}`);
     await guardarCursoEnSupabase(email, cursoId);
@@ -450,35 +456,45 @@ app.post('/api/actualizar-campo', authGuard, async (req, res) => {
 
 // Esta función la defines tú
 async function guardarCursoEnSupabase(email, cursoId) {
+  console.log('📩 Intentando guardar curso para:', email, 'Curso ID:', cursoId);
+
   try {
-    // Busca al usuario
-    const { data: user, error } = await supabase
+    // Convertir correo a minúsculas por consistencia
+    const emailLower = email.toLowerCase();
+
+    const { data: user, error: userError } = await supabase
       .from('usuarios')
       .select('id')
-      .eq('correo', email)
+      .eq('correo', emailLower)
       .single();
 
-    if (error || !user) {
-      console.error('Usuario no encontrado');
+    if (userError) {
+      console.error('❌ Error al buscar usuario en Supabase:', userError.message);
       return;
     }
 
-    // Registra la compra en una tabla "cursos_comprados"
+    if (!user) {
+      console.warn('⚠️ Usuario no encontrado con correo:', emailLower);
+      return;
+    }
+
+    console.log('✅ Usuario encontrado:', user.id);
+
     const { error: insertError } = await supabase
       .from('cursos_comprados')
-      .insert([
-        { user_id: user.id, curso_id: cursoId }
-      ]);
+      .insert([{ user_id: user.id, curso_id: cursoId }]);
 
     if (insertError) {
-      console.error('Error al guardar curso:', insertError);
-    } else {
-      console.log('✅ Curso registrado correctamente');
+      console.error('❌ Error al insertar curso_comprado:', insertError.message);
+      return;
     }
+
+    console.log(`🎉 Curso con ID ${cursoId} guardado exitosamente para usuario ${user.id}`);
   } catch (err) {
-    console.error('Error interno al guardar curso:', err);
+    console.error('💥 Error inesperado al guardar curso:', err);
   }
 }
+
 
 app.post('/api/checkout/curso1', authGuard, async (req, res) => {
   const session = await stripe.checkout.sessions.create({
