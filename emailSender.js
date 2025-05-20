@@ -1,4 +1,3 @@
-// emailSender.js
 const nodemailer = require("nodemailer");
 
 const isDev = process.env.NODE_ENV !== 'production';
@@ -20,10 +19,12 @@ const crearTransporter = async () => {
   } else {
     return {
       transporter: nodemailer.createTransport({
-        service: 'Gmail',
+        host: "smtp.sendgrid.net",
+        port: 587,
+        secure: false,
         auth: {
-          user: process.env.EMAIL_ORIGEN,
-          pass: process.env.EMAIL_PASS,
+          user: "apikey", // ¡Literalmente esto!
+          pass: process.env.SENDGRID_API_KEY,
         },
       }),
     };
@@ -31,18 +32,22 @@ const crearTransporter = async () => {
 };
 
 const enviarCorreo = async ({ to, subject, html }) => {
-  const { transporter, testAccount } = await crearTransporter();
-  const info = await transporter.sendMail({
-    from: `"Mi App" <${process.env.EMAIL_ORIGEN}>`,
-    to,
-    subject,
-    html,
-  });
+  try {
+    const { transporter, testAccount } = await crearTransporter();
+    const info = await transporter.sendMail({
+      from: `"Mi App" <${process.env.EMAIL_ORIGEN}>`,
+      to,
+      subject,
+      html,
+    });
 
-  if (isDev) {
-    console.log("📧 Correo simulado: " + nodemailer.getTestMessageUrl(info));
-  } else {
-    console.log("✅ Correo enviado: " + info.messageId);
+    if (isDev) {
+      console.log("📧 Correo simulado: " + nodemailer.getTestMessageUrl(info));
+    } else {
+      console.log("✅ Correo enviado: " + info.messageId);
+    }
+  } catch (error) {
+    console.error("❌ Error al enviar correo:", error);
   }
 };
 
