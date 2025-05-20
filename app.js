@@ -23,28 +23,32 @@ const port = process.env.PORT || 3000;
 const supabaseUrl = 'https://tqwvrtnooqaohewzaltk.supabase.co';
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
-app.post('/api/stripe/webhook', bodyParser.raw({ type: 'application/json' }), async (req, res) => {
-  const sig = req.headers['stripe-signature'];
-  const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
+
+app.post('/api/stripe/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
   let event;
+
   try {
-    event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
+    event = stripe.webhooks.constructEvent(
+      req.body,
+      req.headers['stripe-signature'],
+      endpointSecret
+    );
   } catch (err) {
-    console.error('❌ Error al verificar el webhook:', err.message);
-    return res.status(400).send(`Webhook Error: ${err.message}`);
+    console.error('⚠️ Webhook error:', err.message);
+    return res.sendStatus(400);
   }
 
+  // Escuchamos el evento de pago completado
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
     const email = session.customer_email;
     const cursoId = session.metadata.curso_id;
 
-    // ✅ Faltaba async
+    console.log(`💰 Compra completada: ${email} compró ${cursoId}`);
     await guardarCursoEnSupabase(email, cursoId);
   }
 
-  console.log('✅ Evento recibido:', event.type);
   res.json({ received: true });
 });
 

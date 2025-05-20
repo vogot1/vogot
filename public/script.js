@@ -287,7 +287,7 @@ chatForm.addEventListener("submit", async (e) => {
 
     const data = await response.json();
     const botReply = data.reply || "Lo siento, no entendí eso.";
-    addMessage("Bot", botReply);
+    addMessage("VitisFume", botReply);
   } catch (err) {
     console.error("Error al conectar con el servidor", err);
     addMessage("Bot", "Hubo un error al conectar con el servidor.");
