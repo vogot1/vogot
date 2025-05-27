@@ -1,0 +1,154 @@
+/* styles.css */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background-color: #f9f5f1;
+  color: #333;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.presentacion-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100%;
+  max-width: 900px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide h1,
+.slide h2 {
+  color: #8b0000;
+  margin-bottom: 1rem;
+}
+
+.slide p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.slide ul {
+  list-style: disc;
+  margin-top: 1rem;
+  padding-left: 0;
+  text-align: center;
+}
+
+.slide ul li {
+  display: list-item;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: 1.05rem;
+}
+
+.slide img {
+  width: 20%;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+
+table {
+  margin: 1.5rem auto 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  font-size: 0.95rem;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+}
+
+table th {
+  background-color: #8b0000;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.slide iframe {
+  border-radius: 12px;
+  margin-top: 1rem;
+  max-height: 600px;
+  width: 100%;
+}
+
+.nav-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nav-buttons button {
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: #a30000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .slide {
+    padding: 1.5rem 1rem;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .slide img {
+    width: 40%;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+}
